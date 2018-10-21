@@ -133,11 +133,13 @@ void Timer(int value) // MOVE and testing whether snake died
 
    if (snake.collision()) {
      printtext(MAX_WIDTH/2 - 50, MAX_HEIGHT/2  , "Game Over");
+     printtext(MAX_WIDTH - 90, MAX_HEIGHT-20, points_to_string());
      return;
    }
 
    if (win()) {
        printtext(MAX_WIDTH/2 - 50, MAX_HEIGHT/2  , "Parabéns você ganhou");
+       printtext(MAX_WIDTH - 90, MAX_HEIGHT-20, points_to_string());
        return;
    }
    
@@ -147,7 +149,7 @@ void Timer(int value) // MOVE and testing whether snake died
      // Gera a comida
    }
     // Redesenha o quadrado com as novas coordenadas   
-   printtext(MAX_WIDTH - 90, MAX_HEIGHT-20  , points_to_string());
+   printtext(MAX_WIDTH - 90, MAX_HEIGHT-20, points_to_string());
    glutPostRedisplay();
    glutTimerFunc(250, Timer, 1);
 }
